@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>QQ登录</title>
+    <style>
+        /*CSS样式：美化页面内容，美化样式*/
+        *{
+            margin:0;
+            padding:0;
+        }
+        .login-box{
+            width:430px;
+            height: 330px;
+            /*border:1px solid red;*/
+            margin:100px auto;
+            background: url(img/tb.png) no-repeat;
+            box-shadow: 0 0 2px rgba(0,0,0,.5);
+        }
+        #input-box{
+            padding:188px 50px;
+        }
+        img{
+            float:left;
+            margin-top:18px;
+        }
+        #right{
+           width:250px;
+            margin-left:20px;
+            float:left;
+        }
+        p{
+          margin-top:15px ;
+        }
+        input{
+           padding:5px 0;
+            border:1px solid #d7d7d7;
+            width:150px;
+        }
+        .loginbtn{
+            border:none;
+            background-color: #0a88e1;
+            color: white;
+            text-align: center;
+            line-height: 20px;
+            width:220px;
+        }
+    </style>
+</head>
+<body>
+<!--HTML标签组织页面内容-->
+<form action="" method="post" class="login-box">
+    <div id="input-box">
+        <img src="img/tx.jpg" width="60" height="60"/>
+        <div id="right">
+            <p>用户名：<input type="text" id="name"/></p>
+            <p>密&nbsp;&nbsp;&nbsp;码：<input type="password" id="pwd"/></p>
+            <p><input type="button" value="登录" class="loginbtn" onclick="check()"/></p>
+        </div>
+    </div>
+</form>
+</body>
+<script>
+    //JavaScript代码:表单内容的验证
+    //验证用户名和密码的非空及有效
+    var rightName = "hello";
+    var rightPwd = "123456";
+
+    function check(){
+        var name = document.getElementById("name"); //获取到用户名文本框
+        var pwd = document.getElementById("pwd"); //获取到用户密码框
+
+        var nameValue = name.value; //用户名文本框中的内容
+        var pwdValue = pwd.value;  //密码框中填写的内容
+
+        if(nameValue.length==0){
+            alert("用户名不能为空！");
+            return;
+        }else if(nameValue!=rightName){
+            alert("用户名输入错误！");
+            return;
+        }else if(pwdValue.length==0){
+            alert("用户密码不能为空！");
+            return;
+        }else if(pwdValue!=rightPwd){
+            alert("用户密码输入错误！");
+            return;
+        }else{
+            alert("登录成功！");
+            return ;
+        }
+    }
+</script>
+</html>
